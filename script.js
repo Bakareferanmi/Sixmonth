@@ -20,7 +20,7 @@ var env=document.getElementById("env"),unlocked=false;
 function unlock(v){unlocked=v;if(v)document.getElementById("envsub").textContent="It’s Friday. Open it."}
 var passwordForm=document.getElementById("password-form"),passwordInput=document.getElementById("surprise-password"),passwordError=document.getElementById("password-error");
 function askPassword(){passwordForm.hidden=false;passwordError.hidden=true;passwordInput.value="";passwordInput.focus()}
-function openEnv(){env.classList.add("open");env.setAttribute("aria-expanded","true");passwordForm.hidden=true}
+function openEnv(){env.classList.add("open");env.setAttribute("aria-expanded","true");passwordForm.hidden=true;if(whatsappNumber)callMe.hidden=false}
 passwordForm.onsubmit=function(event){event.preventDefault();if(passwordInput.value.trim().toLowerCase()==="rhoda"){passwordInput.value="";openEnv()}else{passwordError.hidden=false;passwordInput.value="";passwordInput.focus()}};
 env.onclick=function(){if(env.classList.contains("open"))return;if(unlocked)askPassword();else if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){env.animate([{transform:"translateX(-4px)"},{transform:"translateX(4px)"},{transform:"none"}],{duration:220})}};
 var A=document.querySelector('.polaroid img').src,B=document.querySelector('.arch img').src;document.getElementById('fa').src=A;document.getElementById('fb').src=B;
@@ -30,7 +30,10 @@ var D=[new Date(2026,10,4),new Date(2026,10,5),new Date(2026,10,6)],NM=['Wed','T
 var RS=["You check on me and make sure I'm okay.","You take care of me when I'm sick.","You're kind, calm and considerate.","You understand me and make space for how I feel.","You're sexy and romantic, and I love your body.","Even when I'm burning airtime, I still want one more call with you."],ri=0,rs=document.getElementById('rs'),rn=document.getElementById('rn');
 rn.onclick=function(){if(ri>=RS.length)return;var li=document.createElement('li');li.textContent=RS[ri++];rs.appendChild(li);if(ri===RS.length){rn.textContent='That is six. One for every month.';rn.disabled=true}};
 document.getElementById('si').src=B;
-var pf=document.getElementById('pf');pf.appendChild(document.getElementById('envsub'));pf.appendChild(env);pf.appendChild(passwordForm);
+// Add Feranmi's WhatsApp number in international format when provided.
+var whatsappNumber="",callMe=document.getElementById("call-me");
+if(whatsappNumber){callMe.href="https://wa.me/"+whatsappNumber;callMe.target="_blank";callMe.rel="noopener noreferrer"}
+var pf=document.getElementById('pf');pf.appendChild(document.getElementById('envsub'));pf.appendChild(env);pf.appendChild(passwordForm);pf.appendChild(callMe);
 var cur=-1,sci=false,dz=document.getElementById('days');
 function un(i){return nowD()>=D[i]}
 function scr(){if(sci)return;sci=true;var c=document.getElementById('cv'),w=c.parentNode.clientWidth,h=c.parentNode.clientHeight;c.width=w;c.height=h;var x=c.getContext('2d'),g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,'#E2B84C');g.addColorStop(.5,'#F3D98A');g.addColorStop(1,'#B98F2A');x.fillStyle=g;x.fillRect(0,0,w,h);x.fillStyle='#2a1f00';x.font='italic 500 28px Georgia,serif';x.textAlign='center';x.fillText('Scratch here',w/2,h/2);x.globalCompositeOperation='destination-out';var d=false,k=0;function pt(e){var r=c.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;x.beginPath();x.arc(px,py,26,0,7);x.fill();if(++k%12===0){var a=x.getImageData(0,0,w,h).data,z=0;for(var j=3;j<a.length;j+=64)if(a[j]===0)z++;if(z/(a.length/64)>.4){c.style.opacity=0;c.style.pointerEvents='none'}}}c.onpointerdown=function(e){d=true;c.setPointerCapture(e.pointerId);pt(e)};c.onpointermove=function(e){if(d)pt(e)};c.onpointerup=function(){d=false}}
