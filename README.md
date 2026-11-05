@@ -9,7 +9,7 @@ Open `index.html` or run `python -m http.server 8000` inside this folder and vis
 Upload this folder to Cloudflare Pages, Netlify, or Vercel as a static site. Set output directory to the root folder, no build command.
 
 ## Customize
-Edit `CH` (six chapters), `RS` (six reasons), and the final letter in `script.js` (and the letter text in `index.html`). The date is set to Friday, November 6, 2026.
+Edit `CH` (six memories), `RS` (six reasons), and the final letter in `script.js` (and the letter text in `index.html`). The date is set to Friday, November 6, 2026.
 
 Photos are bundled locally. No backend or account needed. Offline caching is supported after first online load.
 

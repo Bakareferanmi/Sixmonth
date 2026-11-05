@@ -1,8 +1,15 @@
 // Edit these four-line chapters with your real memories.
-var CH=[["Hello","Where it started. I had no idea what you were about to become to me."],["Easy","The month being around you stopped feeling like effort and started feeling like home."],["Laughing","Somewhere in here you became the person I tell everything to first."],["Seen","You noticed the small things about me. I noticed that you noticed."],["Steady","The month I stopped wondering and started knowing."],["Still you","Six months, and I would choose you again today. And Friday."]];
+var CH=[
+  ["Camp", "We met in camp last year. I didn't know then that we'd end up here, six months into this."],
+  ["Our calls", "Somewhere along the way, our calls became a thing. WhatsApp calls, long conversations, and me burning airtime just to talk to you."],
+  ["You check in", "You check on me, even on the ordinary days. It means a lot to know you're thinking about me."],
+  ["When I'm unwell", "When I'm sick, you look after me and make sure I'm okay. I notice the care you put into the little things."],
+  ["Your heart", "You're kind, calm, understanding and considerate. Being with you feels easy because you give me room to be myself."],
+  ["All of you", "You're sexy, romantic, and I love your body. I love the way you care for me, too. Six months in, I'm still drawn to all of you."]
+];
 var m=document.getElementById("months"),note=document.getElementById("note");
 function show(i){[].forEach.call(m.children,function(b,j){b.setAttribute("aria-pressed",i===j)});note.innerHTML="<h3 class='serif'></h3><p></p>";note.firstChild.textContent=CH[i][0];note.lastChild.textContent=CH[i][1]}
-CH.forEach(function(c,i){var b=document.createElement("button");b.textContent=i+1;b.setAttribute("aria-label","Month "+(i+1)+": "+c[0]);b.onclick=function(){show(i)};m.appendChild(b)});show(5);
+CH.forEach(function(c,i){var b=document.createElement("button");b.textContent=i+1;b.setAttribute("aria-label","Memory "+(i+1)+": "+c[0]);b.onclick=function(){show(i)};m.appendChild(b)});show(5);
 // countdown to the next Friday, 00:00 local
 function tick(){var now=nowD(),f=new Date(now);f.setHours(0,0,0,0);var d=(5-f.getDay()+7)%7;f.setDate(f.getDate()+d);
 var n=document.getElementById("n"),t=document.getElementById("t"),sub=document.getElementById("envsub");
@@ -20,7 +27,7 @@ var A=document.querySelector('.polaroid img').src,B=document.querySelector('.arc
 var fl=document.getElementById('flip');fl.onclick=function(){fl.classList.toggle('on')};
 function nowD(){return new Date()}
 var D=[new Date(2026,10,4),new Date(2026,10,5),new Date(2026,10,6)],NM=['Wed','Thu','Fri'],FULL=['Wednesday','Thursday','Friday'];
-var RS=['You laugh with your whole face.','You make ordinary days feel planned.','You are kind when nobody is watching.','You still surprise me, six months in.','Your smile changes my whole week.','Because it is you. It is always you.'],ri=0,rs=document.getElementById('rs'),rn=document.getElementById('rn');
+var RS=["You check on me and make sure I'm okay.","You take care of me when I'm sick.","You're kind, calm and considerate.","You understand me and make space for how I feel.","You're sexy and romantic, and I love your body.","Even when I'm burning airtime, I still want one more call with you."],ri=0,rs=document.getElementById('rs'),rn=document.getElementById('rn');
 rn.onclick=function(){if(ri>=RS.length)return;var li=document.createElement('li');li.textContent=RS[ri++];rs.appendChild(li);if(ri===RS.length){rn.textContent='That is six. One for every month.';rn.disabled=true}};
 document.getElementById('si').src=B;
 var pf=document.getElementById('pf');pf.appendChild(document.getElementById('envsub'));pf.appendChild(env);pf.appendChild(passwordForm);
