@@ -19,4 +19,6 @@ Photos are bundled locally. No backend or account needed. Offline caching is sup
 - `styles.css` — visual styling and animations
 - `script.js` — interactions and countdown
 - `photo-1.jpg`, `photo-2.jpg` — images
+- `voice-note.mp3` — personal recording, revealed after opening Friday’s letter with the password; playback requires a connection on first use
 - `manifest.webmanifest`, `sw.js`, `icon.svg` — PWA assets
+

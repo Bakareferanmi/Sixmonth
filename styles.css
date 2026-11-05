@@ -62,3 +62,5 @@ h1{animation:arrive .8s .15s ease-out both}.lead{animation:arrive .8s .25s ease-
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .paper .body .last-message{margin-top:22px;padding-top:18px;border-top:1px solid #17322633;font:italic 500 21px/1.5 "Bodoni Moda",Georgia,serif}.call-me{display:block;margin-top:16px;padding:14px 18px;border:1px solid var(--gold);border-radius:14px;color:var(--gold);text-align:center;text-decoration:none;font-weight:600;transition:background-color .25s,color .25s}.call-me:hover{background:var(--gold);color:#2a1f00}.call-me[hidden]{display:none}
+.voice-note{margin-top:20px;padding:20px 16px;background:#ffffff0d;border:1px solid #ffffff33;border-radius:18px}.voice-note[hidden]{display:none}.voice-note h3{margin:0 0 14px;font-size:23px;color:var(--gold)}.voice-note audio{display:block;width:100%}
+
