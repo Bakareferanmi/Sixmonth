@@ -30,8 +30,8 @@ var D=[new Date(2026,10,4),new Date(2026,10,5),new Date(2026,10,6)],NM=['Wed','T
 var RS=["You check on me and make sure I'm okay.","You take care of me when I'm sick.","You're kind, calm and considerate.","You understand me and make space for how I feel.","You're sexy and romantic, and I love your body.","Even when I'm burning airtime, I still want one more call with you."],ri=0,rs=document.getElementById('rs'),rn=document.getElementById('rn');
 rn.onclick=function(){if(ri>=RS.length)return;var li=document.createElement('li');li.textContent=RS[ri++];rs.appendChild(li);if(ri===RS.length){rn.textContent='That is six. One for every month.';rn.disabled=true}};
 document.getElementById('si').src=B;
-// Add Feranmi's WhatsApp number in international format when provided.
-var whatsappNumber="",callMe=document.getElementById("call-me");
+// WhatsApp number in international format.
+var whatsappNumber="2348167462524",callMe=document.getElementById("call-me");
 if(whatsappNumber){callMe.href="https://wa.me/"+whatsappNumber;callMe.target="_blank";callMe.rel="noopener noreferrer"}
 var pf=document.getElementById('pf');pf.appendChild(document.getElementById('envsub'));pf.appendChild(env);pf.appendChild(passwordForm);pf.appendChild(callMe);
 var cur=-1,sci=false,dz=document.getElementById('days');
